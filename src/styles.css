@@ -291,10 +291,11 @@
   [lang="mn"] .font-script {
     font-family: "Caveat", "Permanent Marker", cursive;
   }
-  /* Latin brand words inside Mongolian copy keep the original faces */
+  /* Latin brand marks (the WEIDER logo) keep the original faces: mark them lang="en" */
   [lang="mn"] [lang="en"].display,
   [lang="mn"] [lang="en"] .display,
-  [lang="mn"] [lang="en"].font-display {
+  [lang="mn"] [lang="en"].font-display,
+  [lang="mn"] [lang="en"] .font-display {
     font-family: "Anton", Impact, sans-serif;
     font-weight: 400;
     line-height: 0.88;

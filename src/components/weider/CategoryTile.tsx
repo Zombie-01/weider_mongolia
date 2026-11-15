@@ -25,18 +25,21 @@ export function CategoryTile({ category, index }: { category: Category; index: n
       >
         <img
           src={img.jars}
-          alt="Placeholder product photo"
+          alt="Бүтээгдэхүүний түр зураг"
           loading="lazy"
           className="absolute inset-x-0 bottom-0 h-[70%] w-full object-cover object-[50%_40%] opacity-0 transition-all duration-700 [clip-path:inset(100%_0_0_0)] group-hover:opacity-100 group-hover:[clip-path:inset(0_0_0_0)] group-focus-visible:opacity-100 group-focus-visible:[clip-path:inset(0_0_0_0)]"
         />
         <div className={cn("relative flex h-full flex-col justify-between p-6", darkText ? "text-ink" : "text-on-dark")}>
           <div className="flex items-start justify-between">
-            <span className="label-mono text-xs">{category.number} / Category</span>
+            <span className="label-mono text-xs">{category.number} / Ангилал</span>
             <ArrowUpRight className="h-7 w-7 transition-transform duration-300 group-hover:rotate-45" />
           </div>
           <div className="transition-transform duration-500 group-hover:-translate-y-[180%]">
             <h3 className="display text-5xl md:text-6xl">{category.name}</h3>
-            <p className="label-mono mt-2 text-[11px] opacity-80">Products coming soon</p>
+            <p lang="en" className="label-mono mt-2 text-[11px] opacity-80">
+              {category.latin}
+            </p>
+            <p className="label-mono mt-1 text-[11px] opacity-80">Удахгүй нэмэгдэнэ</p>
           </div>
         </div>
       </Paper>

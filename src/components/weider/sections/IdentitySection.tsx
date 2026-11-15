@@ -16,7 +16,7 @@ export function IdentitySection() {
       <div className="relative h-[110vh] min-h-[640px]">
         <motion.img
           src={img.mountains}
-          alt="Mongolian mountains above the open steppe"
+          alt="Монголын уул, тал нутаг"
           loading="lazy"
           style={{ y: bgY }}
           className="photo-bw absolute inset-0 h-[120%] w-full -translate-y-[10%] object-cover"
@@ -31,11 +31,11 @@ export function IdentitySection() {
         <Crosshair className="right-8 top-24 w-10 text-on-dark" />
 
         <div className="relative mx-auto flex h-full max-w-[1600px] flex-col justify-center px-8 md:px-14">
-          <p className="label-mono text-xs text-brand-yellow">06 / Mongolian identity</p>
+          <p className="label-mono text-xs text-brand-yellow">04 / Монгол зан чанар</p>
           <h2 id="identity-title" className="display ink-rough mt-4 text-[15vw] text-on-dark md:text-[8.5vw]">
-            <LineReveal>Stronger people.</LineReveal>
+            <LineReveal>Хүчтэй хүмүүс.</LineReveal>
             <LineReveal delay={0.12}>
-              <span className="text-brand-yellow">A stronger nation.</span>
+              <span className="text-brand-yellow">Хүчирхэг үндэстэн.</span>
             </LineReveal>
           </h2>
         </div>
@@ -48,11 +48,10 @@ export function IdentitySection() {
             <Paper tone="paper" seed={801} className="inset-0" amp={3} />
             <div className="relative p-8 text-ink">
               <p className="font-label text-xl font-bold leading-snug">
-                From the endless landscapes of Mongolia to the walls of the gym, strength is part of
-                our identity.
+                Монголын уудам тал нутгаас эхлээд фитнес төвийн хана хүртэл хүч чадал бол бидний зан чанарын нэг хэсэг.
               </p>
               <p className="mt-4 font-label text-lg font-semibold leading-snug text-ink-soft">
-                We believe in a generation that is stronger, healthier, kinder, and braver.
+                Бид илүү хүчтэй, эрүүл, эелдэг, зоригтой үеийг бүтээхэд итгэдэг.
               </p>
             </div>
           </div>
@@ -63,11 +62,10 @@ export function IdentitySection() {
         <Paper tone="paper" seed={802} className="inset-0" amp={[4, 0, 0, 0]} />
         <Reveal className="relative p-6 text-ink">
           <p className="font-label text-xl font-bold leading-snug">
-            From the endless landscapes of Mongolia to the walls of the gym, strength is part of our
-            identity.
+            Монголын уудам тал нутгаас эхлээд фитнес төвийн хана хүртэл хүч чадал бол бидний зан чанарын нэг хэсэг.
           </p>
           <p className="mt-4 font-label text-lg font-semibold leading-snug text-ink-soft">
-            We believe in a generation that is stronger, healthier, kinder, and braver.
+            Бид илүү хүчтэй, эрүүл, эелдэг, зоригтой үеийг бүтээхэд итгэдэг.
           </p>
         </Reveal>
       </div>
@@ -75,19 +73,19 @@ export function IdentitySection() {
       <div className="relative grid md:grid-cols-12">
         <div className="relative h-[60vh] md:col-span-8">
           <Paper tone="photo" seed={803} className="inset-0" amp={[3, 0, 0, 0]} fiberAmp={0.8}>
-            <img src={img.runner} alt="Athlete running across the steppe" loading="lazy" className="photo-bw h-full w-full object-cover" />
+            <img src={img.runner} alt="Тал нутгаар гүйж буй тамирчин" loading="lazy" className="photo-bw h-full w-full object-cover" />
           </Paper>
         </div>
         <div className="relative md:col-span-4">
           <Paper tone="red" seed={804} className="inset-0" amp={[3, 0, 0, 3]} />
           <div className="relative flex h-full flex-col justify-end gap-2 p-8 md:p-10">
-            {["Stronger", "Healthier", "Kinder", "Braver"].map((w, i) => (
+            {["Хүчтэй", "Эрүүл", "Эелдэг", "Зоригтой"].map((w, i) => (
               <Reveal key={w} delay={i * 0.08}>
                 <p className="display text-6xl text-on-dark md:text-7xl">{w}.</p>
               </Reveal>
             ))}
             <Reveal delay={0.4}>
-              <p className="display text-6xl text-ink md:text-7xl">Mongolia.</p>
+              <p className="display text-6xl text-ink md:text-7xl">Монгол.</p>
             </Reveal>
           </div>
         </div>

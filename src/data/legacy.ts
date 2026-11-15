@@ -12,6 +12,16 @@
  * To add one: put the file in src/assets/archive/, import it below, set `src` and `credit`.
  */
 
+import joePortraitImg from "@/assets/archive/joePortrait.jpg";
+import weiderMagazineImg from "@/assets/archive/weiderMagazine.jpg";
+import arnoldImg from "@/assets/archive/arnold.jpg";
+import ferrignoImg from "@/assets/archive/ferrigno.jpg";
+import columbuImg from "@/assets/archive/columbu.jpg";
+import scottImg from "@/assets/archive/scott.jpg";
+import globalCultureImg from "@/assets/archive/globalCulture.jpg";
+import pumpingIronImg from "@/assets/archive/pumpingIron.jpg";
+import joePortraitCropImg from "@/assets/archive/joePortraitCrop.jpg";
+
 export interface ArchiveImage {
   id: string;
   /** Imported licensed image. Undefined = placeholder is shown. */
@@ -23,6 +33,8 @@ export interface ArchiveImage {
   credit?: string;
   /** Year or era printed on the placeholder / caption. */
   era?: string;
+  /** CSS object-position, to keep the subject in frame when cropped. */
+  position?: string;
 }
 
 const archive = <T extends Record<string, ArchiveImage>>(a: T) => a;
@@ -30,9 +42,20 @@ const archive = <T extends Record<string, ArchiveImage>>(a: T) => a;
 export const archiveImages = archive({
   joePortrait: {
     id: "A-001",
-    alt: "Жо Вейдерийн архивын хөрөг",
+    src: joePortraitImg,
+    alt: "Жо Вейдер 2008 оны Mr. Olympia тэмцээний тайзан дээр тамирчдын дунд",
+    credit: "Eddie Maloney / Wikimedia Commons, CC BY-SA 2.0",
     requirement: "Жо Вейдерийн хар цагаан хөрөг (албан ёсны WEIDER архив)",
-    era: "1940-өөд",
+    era: "2008",
+    position: "47% 55%",
+  },
+  joePortraitCrop: {
+    id: "A-016",
+    src: joePortraitCropImg,
+    alt: "Жо Вейдер 2008 оны Mr. Olympia тэмцээний тайзан дээр",
+    credit: "Eddie Maloney / Wikimedia Commons, CC BY-SA 2.0 (тайрсан)",
+    requirement: "Жо Вейдерийн хар цагаан хөрөг (албан ёсны WEIDER архив)",
+    era: "2008",
   },
   joeAtWork: {
     id: "A-002",
@@ -42,7 +65,9 @@ export const archiveImages = archive({
   },
   weiderMagazine: {
     id: "A-003",
-    alt: "WEIDER-ийн хуучин сэтгүүлийн нүүр",
+    src: weiderMagazineImg,
+    alt: "Жо Вейдерийн 1972 оны хэвлэмэл сурталчилгаа — Ларри Скотт, Дэйв Дрэйпер, Рэг Льюис (Inside Wrestling сэтгүүлийн ар нүүр)",
+    credit: "Unknown author / Wikimedia Commons, Public domain",
     requirement: "Баталгаажсан WEIDER сэтгүүлийн нүүр (эх хэвлэлийн скан)",
     era: "1940–1970",
   },
@@ -60,25 +85,33 @@ export const archiveImages = archive({
   },
   arnold: {
     id: "A-006",
-    alt: "Арнольд Шварценеггер, хар цагаан архивын зураг",
+    src: arnoldImg,
+    alt: "Арнольд Шварценеггер тайзан дээр, 1974 оны Mr. Olympia-гийн өмнө",
+    credit: "Madison Square Garden Center / Wikimedia Commons, Public domain",
     requirement: "Арнольд Шварценеггерийн тайзан дээрх хар цагаан зураг (лицензтэй)",
     era: "1970-аад",
   },
   ferrigno: {
     id: "A-007",
-    alt: "Лу Ферриньо, архивын зураг",
+    src: ferrignoImg,
+    alt: "Лу Ферриньо, 2012 оны хөрөг",
+    credit: "Glenn Francis (Toglenn) / Wikimedia Commons, CC BY-SA 3.0",
     requirement: "Лу Ферриньогийн тэмцээний архивын зураг (лицензтэй)",
     era: "1970-аад",
   },
   columbu: {
     id: "A-008",
-    alt: "Франко Колумбу, архивын зураг",
+    src: columbuImg,
+    alt: "Франко Колумбу Сардинид поз үзүүлж буй нь, 1970-аад оны эхэн",
+    credit: "Unknown author / Wikimedia Commons, Public domain",
     requirement: "Франко Колумбугийн тэмцээний архивын зураг (лицензтэй)",
     era: "1970-аад",
   },
   scott: {
     id: "A-009",
-    alt: "Ларри Скотт, архивын зураг",
+    src: scottImg,
+    alt: "Ларри Скотт, 1960-аад оны хар цагаан зураг",
+    credit: "Gene Mozee / Wikimedia Commons, Public domain",
     requirement: "Ларри Скотт — 1965 оны Mr. Olympia (лицензтэй)",
     era: "1965",
   },
@@ -94,6 +127,14 @@ export const archiveImages = archive({
     requirement: "1970-аад оны бодибилдингийн тэмцээний тайз (лицензтэй)",
     era: "1970-аад",
   },
+  pumpingIron: {
+    id: "A-015",
+    src: pumpingIronImg,
+    alt: 'Арнольд Шварценеггер Gold\'s Gym-д "Pumping Iron" баримтат киноны зураг авалтын үеэр бэлтгэл хийж буй нь, 1975',
+    credit: "Harry Chase, Los Angeles Times / Wikimedia Commons, CC BY 4.0",
+    requirement: "1970-аад оны бэлтгэлийн заалны архивын зураг (лицензтэй)",
+    era: "1975",
+  },
   venice2006: {
     id: "A-012",
     alt: "Venice Muscle Beach, 2006",
@@ -108,7 +149,9 @@ export const archiveImages = archive({
   },
   globalCulture: {
     id: "A-014",
-    alt: "1980–90-ээд оны фитнесийн соёл",
+    src: globalCultureImg,
+    alt: "Арнольд Шварценеггер IFBB-ийн тугийг барин 1981 оны Дэлхийн наадмын нээлтэд",
+    credit: "Jeff in CA / Wikimedia Commons, CC BY-SA 4.0",
     requirement: "1980–90-ээд оны WEIDER / фитнесийн соёлын архивын зураг (лицензтэй)",
     era: "1980–1990",
   },
@@ -267,7 +310,7 @@ export const timeline = {
       title: "Алтан үе",
       text: "Бодибилдинг олон улсад хүлээн зөвшөөрөгдөж, Арнольд Шварценеггер хамгийн нөлөө бүхий хүмүүсийн нэг болов.",
       context: "Соёл",
-      image: "goldenStage",
+      image: "pumpingIron",
     },
     {
       year: 1980,
@@ -311,7 +354,7 @@ export const goldenEra = {
   headline: ["Алтан үе", "хэзээ ч мөхөхгүй."],
   frames: [
     { image: "arnold", caption: "Арнольд Шварценеггер" },
-    { image: "goldenStage", caption: "Алтан үеийн тайз" },
+    { image: "pumpingIron", caption: "Gold's Gym, 1975" },
     { image: "ferrigno", caption: "Лу Ферриньо" },
     { image: "weiderMagazine", caption: "WEIDER сэтгүүл" },
     { image: "columbu", caption: "Франко Колумбу" },

@@ -14,16 +14,16 @@ import { FinalStatement } from "@/components/weider/sections/FinalStatement";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "WEIDER Mongolia — Beyond Your Limits" },
+      { title: "WEIDER Mongolia — Хязгаараа дав" },
       {
         name: "description",
         content:
-          "WEIDER Mongolia: building a stronger, healthier, kinder and braver Mongolia through discipline, performance and personal transformation.",
+          "WEIDER — 1936 оноос хойшхи дэлхийн спортын хоол тэжээлийн брэнд одоо Монголд. Уураг, креатин, амин хүчил, витамин болон спортын хоол тэжээл.",
       },
-      { property: "og:title", content: "WEIDER Mongolia — Beyond Your Limits" },
+      { property: "og:title", content: "WEIDER Mongolia — Хязгаараа дав" },
       {
         property: "og:description",
-        content: "Strength is earned. A movement toward a stronger Mongolia.",
+        content: "Хөлс хүч болно. WEIDER одоо Монголд.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

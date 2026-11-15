@@ -6,11 +6,11 @@ import { img } from "@/data/images";
 import { cn } from "@/lib/utils";
 
 const TILES = [
-  { label: "Training communities", src: img.community, cls: "md:col-span-7 md:row-span-2", pos: "50% 30%" },
-  { label: "Athletes", src: img.woman, cls: "md:col-span-5 md:row-span-2", pos: "50% 20%" },
-  { label: "Gym culture", src: img.chalk, cls: "md:col-span-4", pos: "40% 40%" },
-  { label: "Personal transformations", src: img.recovery, cls: "md:col-span-4", pos: "50% 40%" },
-  { label: "Fitness lifestyle", src: img.runner, cls: "md:col-span-4", pos: "30% 50%" },
+  { label: "Бэлтгэлийн нийгэмлэг", src: img.community, cls: "md:col-span-7 md:row-span-2", pos: "50% 30%" },
+  { label: "Тамирчид", src: img.woman, cls: "md:col-span-5 md:row-span-2", pos: "50% 20%" },
+  { label: "Фитнес соёл", src: img.chalk, cls: "md:col-span-4", pos: "40% 40%" },
+  { label: "Хувь хүний өөрчлөлт", src: img.recovery, cls: "md:col-span-4", pos: "50% 40%" },
+  { label: "Эрүүл амьдралын хэв маяг", src: img.runner, cls: "md:col-span-4", pos: "30% 50%" },
 ];
 
 export function CommunitySection() {
@@ -20,15 +20,15 @@ export function CommunitySection() {
       <div className="relative mx-auto max-w-[1600px] px-5 py-24 md:px-10 md:py-32">
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <div>
-            <p className="label-mono text-xs text-brand-yellow">07 / Community</p>
+            <p className="label-mono text-xs text-brand-yellow">05 / Нийгэмлэг</p>
             <h2 id="community-title" className="display ink-rough mt-4 text-[17vw] text-on-dark md:text-[9vw]">
-              <LineReveal>Strength</LineReveal>
-              <LineReveal delay={0.1}>is shared.</LineReveal>
+              <LineReveal>Хүч</LineReveal>
+              <LineReveal delay={0.1}>хуваалцахад өснө.</LineReveal>
             </h2>
           </div>
           <Magnetic>
             <Link to="/contact" className={bb({ variant: "yellow", size: "lg" })}>
-              Join the movement
+              Хөдөлгөөнд нэгдэх
             </Link>
           </Magnetic>
         </div>

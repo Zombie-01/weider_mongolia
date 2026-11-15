@@ -9,10 +9,10 @@ import { categories } from "@/data/products";
 export const Route = createFileRoute("/products/")({
   head: () => ({
     meta: [
-      { title: "Products — WEIDER Mongolia" },
-      { name: "description", content: "Explore the WEIDER Mongolia collection: protein, creatine, pre-workout, amino acids, vitamins & minerals and sports nutrition." },
-      { property: "og:title", content: "Products — WEIDER Mongolia" },
-      { property: "og:description", content: "Fuel your potential. The WEIDER Mongolia collection." },
+      { title: "Бүтээгдэхүүн — WEIDER Mongolia" },
+      { name: "description", content: "WEIDER бүтээгдэхүүн Монголд: уураг, креатин, дасгалын өмнөх, амин хүчил, витамин ба эрдэс, спортын хоол тэжээл." },
+      { property: "og:title", content: "Бүтээгдэхүүн — WEIDER Mongolia" },
+      { property: "og:description", content: "Чадавхаа тэжээ. WEIDER бүтээгдэхүүн Монголд." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -23,10 +23,10 @@ export const Route = createFileRoute("/products/")({
 function ProductsPage() {
   return (
     <SiteShell>
-      <PageHeader kicker="04 / Performance" title={["Fuel your", "potential."]} tone="red">
+      <PageHeader kicker="Бүтээгдэхүүн" title={["Чадавхаа", "тэжээ."]} tone="red">
         <p className="mt-6 max-w-xl font-label text-lg font-semibold">
-          Six categories, one standard. Full product details, photography and availability are
-          being prepared.
+          Зургаан ангилал, нэг стандарт. Бүтээгдэхүүний дэлгэрэнгүй мэдээлэл, зураг болон нөөцийн
+          мэдээллийг бэлтгэж байна.
         </p>
       </PageHeader>
       <section className="bg-brand-black px-5 py-20 md:px-10">
@@ -39,7 +39,7 @@ function ProductsPage() {
         </div>
         <div className="mx-auto mt-16 max-w-[1600px]">
           <Link to="/contact" className={bb({ variant: "yellow", size: "lg" })}>
-            Contact us to order
+            Захиалга өгөх
           </Link>
         </div>
       </section>

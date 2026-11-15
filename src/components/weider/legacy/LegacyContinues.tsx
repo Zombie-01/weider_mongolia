@@ -73,7 +73,8 @@ export function LegacyContinues() {
       <div data-stage className="relative h-svh min-h-[620px] overflow-hidden">
         {/* past */}
         <div data-vintage className="absolute inset-0">
-          <ArchivePhoto image="goldenStage" caption={false} />
+          <ArchivePhoto image="pumpingIron" caption={false} />
+          <div className="absolute inset-0 bg-linear-to-r from-ink/90 via-ink/55 to-ink/10" />
           <div className="absolute inset-0 bg-[oklch(0.7_0.12_60)] opacity-15 mix-blend-multiply" />
         </div>
         {/* present */}

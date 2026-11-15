@@ -15,22 +15,22 @@ export function ProductsSection() {
       <div className="relative mx-auto max-w-[1600px] px-5 py-24 text-ink md:px-10 md:py-32">
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <div>
-            <p className="label-bold text-xs">04 / Performance</p>
+            <p className="label-bold text-xs">03 / Бүтээгдэхүүн</p>
             <h2 id="products-title" className="display ink-rough mt-4 text-[17vw] md:text-[9vw]">
-              <LineReveal>Fuel your</LineReveal>
-              <LineReveal delay={0.1}>potential.</LineReveal>
+              <LineReveal>Чадавхаа</LineReveal>
+              <LineReveal delay={0.1}>тэжээ.</LineReveal>
             </h2>
           </div>
           <Reveal className="max-w-sm">
             <p className="font-label text-lg font-semibold leading-snug">
-              The WEIDER collection, organised for how you train. Full product details and
-              photography are on their way.
+              WEIDER-ийн бүтээгдэхүүнийг таны бэлтгэлийн хэрэгцээгээр ангилсан. Бүтээгдэхүүний
+              дэлгэрэнгүй мэдээлэл, зураг удахгүй нэмэгдэнэ.
             </p>
           </Reveal>
         </div>
 
         {/* category navigation */}
-        <nav aria-label="Product categories" className="mt-12 flex flex-wrap gap-2 border-y-2 border-ink py-4">
+        <nav aria-label="Бүтээгдэхүүний ангилал" className="mt-12 flex flex-wrap gap-2 border-y-2 border-ink py-4">
           {categories.map((c) => (
             <Link
               key={c.slug}
@@ -66,11 +66,11 @@ export function ProductsSection() {
         <div className="mt-16 flex flex-wrap items-center gap-6">
           <Magnetic>
             <Link to="/products" className={bb({ variant: "red", size: "lg" })}>
-              View the collection
+              Бүх бүтээгдэхүүн
             </Link>
           </Magnetic>
           <Link to="/contact" className="label-mono text-sm underline decoration-2 underline-offset-4 hover:text-brand-red">
-            Ask about availability
+            Нөөц, үнийн талаар асуух
           </Link>
         </div>
       </div>

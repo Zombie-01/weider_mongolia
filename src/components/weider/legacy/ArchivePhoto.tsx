@@ -1,4 +1,4 @@
-import { archiveImages, type ArchiveKey } from "@/data/legacy";
+import { archiveImages, type ArchiveImage, type ArchiveKey } from "@/data/legacy";
 import { cn } from "@/lib/utils";
 
 /**
@@ -20,10 +20,7 @@ export function ArchivePhoto({
   caption?: boolean;
   loading?: "lazy" | "eager";
 }) {
-  const a = archiveImages[image] as (typeof archiveImages)[ArchiveKey] & {
-    src?: string;
-    credit?: string;
-  };
+  const a = archiveImages[image] as ArchiveImage;
 
   if (a.src) {
     return (
@@ -34,6 +31,7 @@ export function ArchivePhoto({
           src={a.src}
           alt={a.alt}
           loading={loading}
+          style={a.position ? { objectPosition: a.position } : undefined}
           className={cn("photo-archive h-full w-full object-cover", imgClassName)}
         />
         {caption && a.credit && (

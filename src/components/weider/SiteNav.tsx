@@ -8,12 +8,11 @@ import { bb } from "./BrandButton";
 import { Paper } from "./Paper";
 
 const NAV = [
-  { label: "Brand", to: "/", hash: "brand" },
-  { label: "Story", to: "/", hash: "story" },
-  { label: "Legacy", to: "/legacy" },
-  { label: "Products", to: "/products" },
-  { label: "Community", to: "/", hash: "community" },
-  { label: "Contact", to: "/contact" },
+  { label: "Бидний тухай", to: "/", hash: "story" },
+  { label: "Бүтээгдэхүүн", to: "/products" },
+  { label: "Өв түүх", to: "/legacy" },
+  { label: "Нийгэмлэг", to: "/", hash: "community" },
+  { label: "Холбоо барих", to: "/contact" },
 ] as const;
 
 /**
@@ -49,13 +48,13 @@ export function SiteNav({ hideAtTop = false }: { hideAtTop?: boolean }) {
             scrolled || !hideAtTop ? "bg-ink/95 text-on-dark backdrop-blur" : "bg-ink/95 text-on-dark md:bg-transparent",
           )}
         >
-          <Link to="/" className="font-display text-3xl leading-none tracking-tight md:text-4xl">
+          <Link to="/" lang="en" className="font-display text-3xl leading-none tracking-tight md:text-4xl">
             WEIDER<sup className="ml-0.5 font-label text-xs">®</sup>
             <span className="label-mono ml-3 hidden align-middle text-[10px] text-brand-yellow lg:inline">
               Mongolia
             </span>
           </Link>
-          <nav aria-label="Main" className="hidden items-center gap-8 md:flex">
+          <nav aria-label="Үндсэн цэс" className="hidden items-center gap-8 md:flex">
             {NAV.map((n) => (
               <Link
                 key={n.label}
@@ -71,13 +70,13 @@ export function SiteNav({ hideAtTop = false }: { hideAtTop?: boolean }) {
           <div className="hidden md:block">
             <Magnetic>
               <Link to="/products" className={bb({ variant: "red", size: "md" }, "py-2 text-lg")}>
-                Explore Weider
+                Бүтээгдэхүүн
               </Link>
             </Magnetic>
           </div>
           <button
             type="button"
-            aria-label="Open menu"
+            aria-label="Цэс нээх"
             onClick={() => setOpen(true)}
             className="p-2 md:hidden"
           >
@@ -107,12 +106,12 @@ export function SiteNav({ hideAtTop = false }: { hideAtTop?: boolean }) {
             <Paper tone="blue" seed={89} className="inset-x-0 bottom-0 h-[30%]" amp={[6, 0, 0, 0]} />
             <div className="relative flex h-full flex-col px-6 py-5">
               <div className="flex items-center justify-between text-on-dark">
-                <span className="font-display text-3xl">WEIDER®</span>
-                <button type="button" aria-label="Close menu" onClick={() => setOpen(false)} className="p-2">
+                <span lang="en" className="font-display text-3xl">WEIDER®</span>
+                <button type="button" aria-label="Цэс хаах" onClick={() => setOpen(false)} className="p-2">
                   <X className="h-8 w-8" />
                 </button>
               </div>
-              <nav aria-label="Mobile" className="mt-10 flex flex-col gap-1">
+              <nav aria-label="Гар утасны цэс" className="mt-10 flex flex-col gap-1">
                 {NAV.map((n, i) => (
                   <motion.div
                     key={n.label}
@@ -133,7 +132,7 @@ export function SiteNav({ hideAtTop = false }: { hideAtTop?: boolean }) {
                 ))}
               </nav>
               <p className="label-mono mt-auto text-xs text-on-dark">
-                Built different — for a brighter tomorrow
+                1936 оноос хойш · Одоо Монголд
               </p>
             </div>
           </motion.div>

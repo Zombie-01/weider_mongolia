@@ -4,20 +4,20 @@ import { bb } from "../BrandButton";
 
 /** Marquee band directly under the brand board, carrying the opening CTAs. */
 export function HeroCtaBand() {
-  const words = ["Stronger", "Healthier", "Kinder", "Braver", "Mongolia"];
+  const words = ["Хүчтэй", "Эрүүл", "Эелдэг", "Зоригтой", "Монгол"];
   return (
-    <section aria-label="Explore" className="relative z-10 hidden border-y-4 border-ink bg-brand-yellow text-ink md:block">
+    <section aria-label="Танилцах" className="relative z-10 hidden border-y-4 border-ink bg-brand-yellow text-ink md:block">
       <div className="flex items-center justify-between gap-8 px-10 py-6">
-        <p className="display text-5xl lg:text-6xl">Discipline builds a stronger tomorrow.</p>
+        <p className="display text-5xl lg:text-6xl">Дэлхийн брэнд — одоо Монголд.</p>
         <div className="flex shrink-0 gap-6">
           <Magnetic>
             <Link to="/" hash="story" className={bb({ variant: "ink", size: "md" })}>
-              Explore the movement
+              Бидний тухай
             </Link>
           </Magnetic>
           <Magnetic>
             <Link to="/products" className={bb({ variant: "red", size: "md" })}>
-              Discover Weider
+              Бүтээгдэхүүн үзэх
             </Link>
           </Magnetic>
         </div>

@@ -6,12 +6,12 @@ import { img } from "@/data/images";
 import { cn } from "@/lib/utils";
 
 const FRAMES = [
-  { word: "Training", src: img.deadlift, pos: "50% 30%" },
-  { word: "Strength", src: img.chalk, pos: "40% 40%" },
-  { word: "Discipline", src: img.woman, pos: "50% 25%" },
-  { word: "Recovery", src: img.recovery, pos: "50% 40%" },
-  { word: "Performance", src: img.runner, pos: "30% 50%" },
-  { word: "Consistency", src: img.community, pos: "50% 30%" },
+  { word: "Бэлтгэл", src: img.deadlift, pos: "50% 30%" },
+  { word: "Хүч", src: img.chalk, pos: "40% 40%" },
+  { word: "Сахилга", src: img.woman, pos: "50% 25%" },
+  { word: "Сэргэлт", src: img.recovery, pos: "50% 40%" },
+  { word: "Гүйцэтгэл", src: img.runner, pos: "30% 50%" },
+  { word: "Тогтвортой", src: img.community, pos: "50% 30%" },
 ];
 
 /** Scroll-driven sequence: vertical scroll moves a torn photo strip sideways. */
@@ -43,15 +43,15 @@ export function DisciplineSection() {
       <div className="md:sticky md:top-0 md:flex md:h-screen md:flex-col md:overflow-hidden">
         <div className="flex items-end justify-between px-5 pt-24 md:px-10 md:pt-24">
           <h2 id="discipline-title" className="display ink-rough text-[18vw] text-on-dark md:text-[7.5vw]">
-            <LineReveal>Preparation</LineReveal>
+            <LineReveal>Бэлтгэл</LineReveal>
             <LineReveal delay={0.08}>
-              <span className="text-brand-red">creates</span>
+              <span className="text-brand-red">эрх чөлөөг</span>
             </LineReveal>
-            <LineReveal delay={0.16}>freedom.</LineReveal>
+            <LineReveal delay={0.16}>бүтээнэ.</LineReveal>
           </h2>
           <div className="hidden text-right md:block">
             <motion.span className="display block text-8xl text-brand-yellow">{counter}</motion.span>
-            <span className="label-mono text-xs text-on-dark">/ 06 disciplines</span>
+            <span className="label-mono text-xs text-on-dark">/ 06 зарчим</span>
           </div>
         </div>
 
@@ -83,7 +83,7 @@ function Frame({ word, src, pos, i }: { word: string; src: string; pos: string; 
       <Paper tone="photo" seed={700 + i * 3} className="inset-0" amp={2.5} fiberAmp={0.8}>
         <img
           src={src}
-          alt={`${word} — training photography`}
+          alt={`${word} — бэлтгэлийн зураг`}
           loading="lazy"
           className="photo-bw h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110"
           style={{ objectPosition: pos }}

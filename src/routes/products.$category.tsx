@@ -14,13 +14,13 @@ export const Route = createFileRoute("/products/$category")({
     return { category };
   },
   head: ({ loaderData }) => {
-    const name = loaderData?.category.name ?? "Category";
+    const name = loaderData?.category.name ?? "Ангилал";
     return {
       meta: [
         { title: `${name} — WEIDER Mongolia` },
-        { name: "description", content: `WEIDER Mongolia ${name}. Product details coming soon.` },
+        { name: "description", content: `WEIDER Mongolia — ${name}. Бүтээгдэхүүний мэдээлэл удахгүй.` },
         { property: "og:title", content: `${name} — WEIDER Mongolia` },
-        { property: "og:description", content: `WEIDER Mongolia ${name} collection.` },
+        { property: "og:description", content: `WEIDER Mongolia — ${name}.` },
         { property: "og:type", content: "website" },
         { name: "twitter:card", content: "summary_large_image" },
         ...(loaderData ? [] : [{ name: "robots", content: "noindex" }]),
@@ -29,9 +29,9 @@ export const Route = createFileRoute("/products/$category")({
   },
   notFoundComponent: () => (
     <SiteShell>
-      <PageHeader kicker="404" title={["Not found."]} tone="blue">
+      <PageHeader kicker="404" title={["Олдсонгүй."]} tone="blue">
         <Link to="/products" className={bb({ variant: "yellow" }, "mt-8")}>
-          Back to products
+          Бүтээгдэхүүн рүү буцах
         </Link>
       </PageHeader>
     </SiteShell>
@@ -45,7 +45,7 @@ function CategoryPage() {
   const tone = category.tone === "black" ? "blue" : category.tone;
   return (
     <SiteShell>
-      <PageHeader kicker={`${category.number} / Category`} title={[category.name]} tone={tone} />
+      <PageHeader kicker={`${category.number} / Ангилал · ${category.latin}`} title={[category.name]} tone={tone} />
 
       {/* product detail template — fill with real product data */}
       <section className="bg-brand-black px-5 py-20 md:px-10">
@@ -54,27 +54,26 @@ function CategoryPage() {
             <Paper tone="photo" seed={1200} className="inset-0" amp={2} fiberAmp={0.6}>
               <img
                 src={img.jars}
-                alt="Placeholder product photo"
+                alt="Бүтээгдэхүүний түр зураг"
                 className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110"
               />
             </Paper>
             <span className="label-bold absolute left-5 top-5 bg-brand-yellow px-3 py-1 text-xs text-ink">
-              Placeholder image
+              Түр зураг
             </span>
           </Reveal>
           <div className="text-on-dark">
-            <p className="label-mono text-xs text-brand-yellow">Featured product</p>
+            <p className="label-mono text-xs text-brand-yellow">Онцлох бүтээгдэхүүн</p>
             <h2 className="display mt-3 text-6xl md:text-8xl">{slots[0]?.name}</h2>
             <p className="mt-6 max-w-md font-label text-lg font-semibold text-muted-foreground">
-              Product description, flavours, sizes and usage will appear here once WEIDER Mongolia
-              product data is provided.
+              Бүтээгдэхүүний тайлбар, амт, хэмжээ, хэрэглэх заавар энд удахгүй нэмэгдэнэ.
             </p>
             <div className="mt-10 flex flex-wrap gap-5">
               <Link to="/contact" className={bb({ variant: "red", size: "lg" })}>
-                Contact to order
+                Захиалга өгөх
               </Link>
               <Link to="/products" className={bb({ variant: "outline" }, "text-on-dark")}>
-                All categories
+                Бүх ангилал
               </Link>
             </div>
           </div>
@@ -84,13 +83,13 @@ function CategoryPage() {
       <section className="relative">
         <Paper tone="paper" seed={1201} className="inset-0" amp={[2, 0, 0, 0]} shadow={false} />
         <div className="relative mx-auto max-w-[1600px] px-5 py-20 text-ink md:px-10">
-          <h2 className="display text-5xl md:text-7xl">In this category</h2>
+          <h2 className="display text-5xl md:text-7xl">Энэ ангиллын бүтээгдэхүүн</h2>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {slots.map((s, i) => (
               <Reveal key={s.id} delay={i * 0.08} className="group">
                 <div className="relative aspect-[4/5] overflow-hidden">
                   <Paper tone="photo" seed={1210 + i} className="inset-0" amp={2}>
-                    <img src={img.jars} alt="Placeholder product photo" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <img src={img.jars} alt="Бүтээгдэхүүний түр зураг" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   </Paper>
                 </div>
                 <p className="display mt-4 text-3xl">{s.name}</p>
@@ -98,7 +97,7 @@ function CategoryPage() {
               </Reveal>
             ))}
           </div>
-          <nav aria-label="Other categories" className="mt-16 flex flex-wrap gap-2">
+          <nav aria-label="Бусад ангилал" className="mt-16 flex flex-wrap gap-2">
             {categories
               .filter((c) => c.slug !== category.slug)
               .map((c) => (

@@ -8,16 +8,18 @@ export interface Category {
   slug: string;
   number: string;
   name: string;
+  /** English category name as printed on WEIDER packaging. */
+  latin: string;
   tone: Exclude<PaperTone, "photo" | "paper">;
 }
 
 export const categories: Category[] = [
-  { slug: "protein", number: "01", name: "Protein", tone: "red" },
-  { slug: "creatine", number: "02", name: "Creatine", tone: "blue" },
-  { slug: "pre-workout", number: "03", name: "Pre-Workout", tone: "orange" },
-  { slug: "amino-acids", number: "04", name: "Amino Acids", tone: "yellow" },
-  { slug: "vitamins-minerals", number: "05", name: "Vitamins & Minerals", tone: "black" },
-  { slug: "sports-nutrition", number: "06", name: "Sports Nutrition", tone: "red" },
+  { slug: "protein", number: "01", name: "Уураг", latin: "Protein", tone: "red" },
+  { slug: "creatine", number: "02", name: "Креатин", latin: "Creatine", tone: "blue" },
+  { slug: "pre-workout", number: "03", name: "Дасгалын өмнөх", latin: "Pre-Workout", tone: "orange" },
+  { slug: "amino-acids", number: "04", name: "Амин хүчил", latin: "Amino Acids", tone: "yellow" },
+  { slug: "vitamins-minerals", number: "05", name: "Витамин ба эрдэс", latin: "Vitamins & Minerals", tone: "black" },
+  { slug: "sports-nutrition", number: "06", name: "Спортын хоол тэжээл", latin: "Sports Nutrition", tone: "red" },
 ];
 
 export interface ProductSlot {
@@ -30,8 +32,8 @@ export interface ProductSlot {
 export function productSlots(category: Category): ProductSlot[] {
   return [1, 2, 3].map((n) => ({
     id: `${category.slug}-${n}`,
-    name: `${category.name} — Product ${String(n).padStart(2, "0")}`,
-    note: "Product details coming soon",
+    name: `${category.name} — Бүтээгдэхүүн ${String(n).padStart(2, "0")}`,
+    note: "Дэлгэрэнгүй мэдээлэл удахгүй",
   }));
 }
 

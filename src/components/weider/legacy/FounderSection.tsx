@@ -89,7 +89,7 @@ export function FounderSection() {
           <div className="relative md:col-span-5">
             <div data-portrait className="relative aspect-[4/5] w-full" data-cursor="Архив">
               <Paper tone="photo" seed={1202} className="inset-0" amp={2.4}>
-                <ArchivePhoto image="joePortrait" />
+                <ArchivePhoto image="joePortraitCrop" />
               </Paper>
               {/* tape */}
               <span
