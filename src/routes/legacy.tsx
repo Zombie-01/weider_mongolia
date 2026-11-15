@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell } from "@/components/weider/SiteShell";
-import { LegacyCursor } from "@/components/weider/legacy/LegacyCursor";
 import { ChapterNav } from "@/components/weider/legacy/ChapterNav";
 import { LegacyIntro } from "@/components/weider/legacy/LegacyIntro";
 import { FounderSection } from "@/components/weider/legacy/FounderSection";
@@ -32,7 +31,6 @@ function LegacyPage() {
   return (
     <SiteShell>
       <div lang="mn">
-        <LegacyCursor />
         <ChapterNav />
         <LegacyIntro />
         <FounderSection />

@@ -302,6 +302,18 @@
   }
 }
 
+/* Brand cursor (BrandCursor.tsx) replaces the native pointer on fine pointers; text fields keep the caret */
+html.brand-cursor,
+html.brand-cursor * {
+  cursor: none !important;
+}
+html.brand-cursor :is(input, textarea, select, [contenteditable="true"]) {
+  cursor: text !important;
+}
+html.brand-cursor select {
+  cursor: pointer !important;
+}
+
 /* Vintage archive photo treatment: warm, faded, grainy */
 @utility photo-archive {
   filter: grayscale(1) sepia(0.35) contrast(1.1) brightness(0.92);

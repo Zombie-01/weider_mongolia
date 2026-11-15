@@ -11,6 +11,7 @@ export function ProductCard({ product: p, className }: { product: Product; class
     <Link
       to="/products/$category/$product"
       params={{ category: p.category, product: p.id }}
+      data-cursor="Үзэх"
       className={cn(
         "group relative flex h-full flex-col bg-paper text-ink transition-transform duration-500 hover:-translate-y-1.5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring",
         className,

@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { SiteNav } from "./SiteNav";
 import { SiteFooter } from "./SiteFooter";
+import { BrandCursor } from "./BrandCursor";
 
 export function SiteShell({ children, navHiddenAtTop = false }: { children: ReactNode; navHiddenAtTop?: boolean }) {
   return (
@@ -15,6 +16,7 @@ export function SiteShell({ children, navHiddenAtTop = false }: { children: Reac
       <main>{children}</main>
       <SiteFooter />
       <div aria-hidden className="site-grain" />
+      <BrandCursor />
     </>
   );
 }

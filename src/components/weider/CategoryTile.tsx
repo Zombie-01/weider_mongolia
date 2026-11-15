@@ -15,6 +15,7 @@ export function CategoryTile({ category, index }: { category: Category; index: n
     <Link
       to="/products/$category"
       params={{ category: category.slug }}
+      data-cursor="Нээх"
       className="group relative block aspect-[4/5] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring"
     >
       <Paper
