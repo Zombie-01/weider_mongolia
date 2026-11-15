@@ -21,6 +21,7 @@ export function SiteFooter() {
           <div className="flex flex-col gap-3">
             <p className="label-mono text-[11px] text-brand-red">Explore</p>
             <Link to="/" hash="story" className="label-bold text-sm hover:text-brand-red">About</Link>
+            <Link to="/legacy" className="label-bold text-sm hover:text-brand-red">Legacy</Link>
             <Link to="/products" className="label-bold text-sm hover:text-brand-red">Products</Link>
             <Link to="/" hash="community" className="label-bold text-sm hover:text-brand-red">Community</Link>
             <Link to="/contact" className="label-bold text-sm hover:text-brand-red">Contact</Link>

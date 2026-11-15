@@ -10,6 +10,7 @@ import { Paper } from "./Paper";
 const NAV = [
   { label: "Brand", to: "/", hash: "brand" },
   { label: "Story", to: "/", hash: "story" },
+  { label: "Legacy", to: "/legacy" },
   { label: "Products", to: "/products" },
   { label: "Community", to: "/", hash: "community" },
   { label: "Contact", to: "/contact" },
