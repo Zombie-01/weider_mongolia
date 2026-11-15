@@ -4,7 +4,10 @@ import { Paper } from "../Paper";
 import { CategoryTile } from "../CategoryTile";
 import { LineReveal, Magnetic, Reveal } from "../motion";
 import { bb } from "../BrandButton";
-import { categories } from "@/data/products";
+import { categories, findProduct } from "@/data/products";
+import { ProductCard } from "../ProductCard";
+
+const FEATURED = ["premium-whey-2300", "mega-mass-3000", "pure-creatine", "energy-up-caffeine"];
 import { cn } from "@/lib/utils";
 
 export function ProductsSection() {
@@ -23,8 +26,8 @@ export function ProductsSection() {
           </div>
           <Reveal className="max-w-sm">
             <p className="font-label text-lg font-semibold leading-snug">
-              WEIDER-ийн бүтээгдэхүүнийг таны бэлтгэлийн хэрэгцээгээр ангилсан. Бүтээгдэхүүний
-              дэлгэрэнгүй мэдээлэл, зураг удахгүй нэмэгдэнэ.
+              WEIDER болон Victory Endurance-ийн бүтээгдэхүүнийг таны бэлтгэлийн хэрэгцээгээр
+              ангилсан. Бүгд үнэ, найрлагын мэдээлэлтэй.
             </p>
           </Reveal>
         </div>
@@ -61,6 +64,20 @@ export function ProductsSection() {
               </div>
             </Reveal>
           ))}
+        </div>
+
+        <div className="mt-20">
+          <p className="label-bold text-xs">Онцлох бүтээгдэхүүн</p>
+          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {FEATURED.map((id, i) => {
+              const p = findProduct(id);
+              return p ? (
+                <Reveal key={id} delay={i * 0.06} className="h-full">
+                  <ProductCard product={p} className="shadow-[8px_8px_0_0_var(--ink)]" />
+                </Reveal>
+              ) : null;
+            })}
+          </div>
         </div>
 
         <div className="mt-16 flex flex-wrap items-center gap-6">

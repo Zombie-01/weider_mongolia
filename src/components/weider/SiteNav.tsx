@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { EASE, Magnetic } from "./motion";
 import { bb } from "./BrandButton";
 import { Paper } from "./Paper";
+import logoWhite from "@/assets/brand/weider-man-white.png";
 
 const NAV = [
   { label: "Бидний тухай", to: "/", hash: "story" },
@@ -48,8 +49,11 @@ export function SiteNav({ hideAtTop = false }: { hideAtTop?: boolean }) {
             scrolled || !hideAtTop ? "bg-ink/95 text-on-dark backdrop-blur" : "bg-ink/95 text-on-dark md:bg-transparent",
           )}
         >
-          <Link to="/" lang="en" className="font-display text-3xl leading-none tracking-tight md:text-4xl">
-            WEIDER<sup className="ml-0.5 font-label text-xs">®</sup>
+          <Link to="/" lang="en" className="flex items-center gap-2 font-display text-3xl leading-none tracking-tight md:text-4xl">
+            <img src={logoWhite} alt="" aria-hidden className="h-8 w-auto md:h-9" />
+            <span>
+              WEIDER<sup className="ml-0.5 font-label text-xs">®</sup>
+            </span>
             <span className="label-mono ml-3 hidden align-middle text-[10px] text-brand-yellow lg:inline">
               Mongolia
             </span>

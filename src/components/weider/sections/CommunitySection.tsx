@@ -3,12 +3,15 @@ import { Paper } from "../Paper";
 import { LineReveal, Magnetic, Reveal } from "../motion";
 import { bb } from "../BrandButton";
 import { img } from "@/data/images";
+import { site } from "@/data/site";
+import athleteEnergyUp from "@/assets/community/athlete-energy-up.jpg";
+import athleteHiCarbo from "@/assets/community/athlete-hi-carbo.jpg";
 import { cn } from "@/lib/utils";
 
 const TILES = [
   { label: "Бэлтгэлийн нийгэмлэг", src: img.community, cls: "md:col-span-7 md:row-span-2", pos: "50% 30%" },
-  { label: "Тамирчид", src: img.woman, cls: "md:col-span-5 md:row-span-2", pos: "50% 20%" },
-  { label: "Фитнес соёл", src: img.chalk, cls: "md:col-span-4", pos: "40% 40%" },
+  { label: "Манай тамирчид", src: athleteEnergyUp, cls: "md:col-span-5 md:row-span-2", pos: "50% 30%" },
+  { label: "Victory Endurance", src: athleteHiCarbo, cls: "md:col-span-4", pos: "50% 35%" },
   { label: "Хувь хүний өөрчлөлт", src: img.recovery, cls: "md:col-span-4", pos: "50% 40%" },
   { label: "Эрүүл амьдралын хэв маяг", src: img.runner, cls: "md:col-span-4", pos: "30% 50%" },
 ];
@@ -26,11 +29,18 @@ export function CommunitySection() {
               <LineReveal delay={0.1}>хуваалцахад өснө.</LineReveal>
             </h2>
           </div>
-          <Magnetic>
-            <Link to="/contact" className={bb({ variant: "yellow", size: "lg" })}>
-              Хөдөлгөөнд нэгдэх
-            </Link>
-          </Magnetic>
+          <div className="flex flex-wrap gap-4">
+            <Magnetic>
+              <a href={site.instagram} target="_blank" rel="noreferrer" className={bb({ variant: "yellow", size: "lg" })}>
+                {site.instagramHandle}
+              </a>
+            </Magnetic>
+            <Magnetic>
+              <Link to="/contact" className={bb({ variant: "outline", size: "lg" }, "text-on-dark")}>
+                Хөдөлгөөнд нэгдэх
+              </Link>
+            </Magnetic>
+          </div>
         </div>
 
         <div className="mt-14 grid auto-rows-[44vw] gap-5 md:auto-rows-[20vw] md:grid-cols-12">

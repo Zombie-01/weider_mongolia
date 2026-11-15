@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram, Youtube } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
 import { Paper } from "./Paper";
+import { site } from "@/data/site";
+import logo from "@/assets/brand/weider-man.png";
 
 export function SiteFooter() {
   return (
@@ -8,6 +10,7 @@ export function SiteFooter() {
       <Paper tone="paper" seed={991} className="inset-0" amp={[2, 0, 0, 0]} shadow={false} />
       <div className="relative mx-auto grid max-w-[1600px] gap-12 px-5 pb-10 pt-20 text-ink md:grid-cols-12 md:px-10">
         <div className="md:col-span-5">
+          <img src={logo} alt="WEIDER лого" className="mb-4 h-24 w-auto" />
           <p lang="en" className="font-display text-7xl leading-none">
             WEIDER<sup className="font-label text-2xl">®</sup>
           </p>
@@ -36,9 +39,8 @@ export function SiteFooter() {
           <p className="label-mono text-[11px] text-brand-red">Биднийг дага</p>
           <div className="mt-3 flex gap-3">
             {[
-              { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/" },
-              { Icon: Facebook, label: "Facebook", href: "https://www.facebook.com/" },
-              { Icon: Youtube, label: "YouTube", href: "https://www.youtube.com/" },
+              { Icon: Facebook, label: "Facebook — WeiderMongolia", href: site.facebook },
+              { Icon: Instagram, label: "Instagram — @weider_mongolia", href: site.instagram },
             ].map(({ Icon, label, href }) => (
               <a
                 key={label}
@@ -53,6 +55,12 @@ export function SiteFooter() {
             ))}
           </div>
         </div>
+          <a href={site.instagram} target="_blank" rel="noreferrer" className="label-bold mt-4 block text-sm hover:text-brand-red">
+            {site.instagramHandle}
+          </a>
+          <a href={site.facebook} target="_blank" rel="noreferrer" className="label-bold mt-1 block text-sm hover:text-brand-red">
+            facebook.com/WeiderMongolia
+          </a>
         <div className="flex flex-col justify-between gap-4 border-t-2 border-ink pt-6 md:col-span-12 md:flex-row">
           <p className="display text-3xl md:text-4xl">Хязгаараа дав. Хөлс хүч болно.</p>
           <p className="label-mono self-end text-[11px]">© {new Date().getFullYear()} Weider Mongolia</p>

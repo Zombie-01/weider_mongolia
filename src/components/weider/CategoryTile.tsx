@@ -1,12 +1,15 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { Paper } from "./Paper";
+import { productsIn, type Category } from "@/data/products";
+import { productImage } from "./ProductImage";
 import { img } from "@/data/images";
-import type { Category } from "@/data/products";
 import { cn } from "@/lib/utils";
 
 /** Category entry: torn colour sheet with a placeholder product photo that reveals on hover. */
 export function CategoryTile({ category, index }: { category: Category; index: number }) {
+  const items = productsIn(category.slug);
+  const shot = items.map((p) => productImage(p.id)).find(Boolean);
   const darkText = category.tone === "yellow" || category.tone === "orange";
   return (
     <Link
@@ -24,10 +27,10 @@ export function CategoryTile({ category, index }: { category: Category; index: n
         amp={2.5}
       >
         <img
-          src={img.jars}
-          alt="Бүтээгдэхүүний түр зураг"
+          src={shot ?? img.jars}
+          alt=""
           loading="lazy"
-          className="absolute inset-x-0 bottom-0 h-[70%] w-full object-cover object-[50%_40%] opacity-0 transition-all duration-700 [clip-path:inset(100%_0_0_0)] group-hover:opacity-100 group-hover:[clip-path:inset(0_0_0_0)] group-focus-visible:opacity-100 group-focus-visible:[clip-path:inset(0_0_0_0)]"
+          className="absolute inset-x-0 bottom-0 h-[70%] w-full object-contain p-6 opacity-0 drop-shadow-[0_16px_20px_rgba(0,0,0,0.4)] transition-all duration-700 [clip-path:inset(100%_0_0_0)] group-hover:opacity-100 group-hover:[clip-path:inset(0_0_0_0)] group-focus-visible:opacity-100 group-focus-visible:[clip-path:inset(0_0_0_0)]"
         />
         <div className={cn("relative flex h-full flex-col justify-between p-6", darkText ? "text-ink" : "text-on-dark")}>
           <div className="flex items-start justify-between">
@@ -39,7 +42,7 @@ export function CategoryTile({ category, index }: { category: Category; index: n
             <p lang="en" className="label-mono mt-2 text-[11px] opacity-80">
               {category.latin}
             </p>
-            <p className="label-mono mt-1 text-[11px] opacity-80">Удахгүй нэмэгдэнэ</p>
+            <p className="label-mono mt-1 text-[11px] opacity-80">{items.length} бүтээгдэхүүн</p>
           </div>
         </div>
       </Paper>

@@ -340,12 +340,12 @@ const SWATCHES = [
 
 /** Short two-line labels that fit under an 80px sheet. */
 const SWATCH_LABEL: Record<string, [string, string]> = {
-  protein: ["Уураг", ""],
+  protein: ["Уураг ба", "масс"],
   creatine: ["Креатин", ""],
-  "pre-workout": ["Дасгалын", "өмнөх"],
   "amino-acids": ["Амин", "хүчил"],
-  "vitamins-minerals": ["Витамин", "эрдэс"],
-  "sports-nutrition": ["Спорт", "хоол"],
+  "energy-gels": ["Энергийн", "гель"],
+  hydration: ["Шингэн", "нөхөгч"],
+  "l-carnitine": ["L-карни-", "тин"],
 };
 
 function Swatches() {

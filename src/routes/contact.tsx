@@ -74,6 +74,15 @@ function ContactPage() {
                   Илгээх
                 </button>
               </Magnetic>
+              <p className="label-mono mt-6 text-[11px] text-brand-red">Эсвэл шууд бичээрэй</p>
+              <div className="mt-2 flex flex-wrap gap-3">
+                <a href={site.facebook} target="_blank" rel="noreferrer" className="label-bold border-2 border-ink px-3 py-2 text-xs hover:bg-ink hover:text-on-dark">
+                  Facebook · WeiderMongolia
+                </a>
+                <a href={site.instagram} target="_blank" rel="noreferrer" className="label-bold border-2 border-ink px-3 py-2 text-xs hover:bg-ink hover:text-on-dark">
+                  Instagram · {site.instagramHandle}
+                </a>
+              </div>
               <p className="label-mono mt-4 text-[11px] text-ink-soft">Таны и-мэйл програм {site.email} хаяг руу нээгдэнэ</p>
             </div>
           </form>
