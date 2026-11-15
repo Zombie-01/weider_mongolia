@@ -1,0 +1,275 @@
+/*
+ * Tailwind v4 entry: config lives here, with no tailwind.config.js or PostCSS plugin.
+ * Keep every @import in this top block. Web fonts load via <link> in src/routes/__root.tsx.
+ */
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * WEIDER MONGOLIA design system — brutalist editorial, torn-paper collage.
+ * Brand colors: electric red, cobalt blue, bright orange, acid yellow, deep black,
+ * metallic silver, paper white. All colors are oklch tokens.
+ */
+
+@theme inline {
+  --font-display: "Anton", "Bebas Neue", Impact, sans-serif;
+  --font-label: "Archivo", "Inter", system-ui, sans-serif;
+  --font-mono: "Roboto Mono", ui-monospace, monospace;
+  --font-script: "Permanent Marker", cursive;
+  --font-sans: "Archivo", "Inter", system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  /* Brand */
+  --color-brand-red: var(--brand-red);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-yellow: var(--brand-yellow);
+  --color-brand-black: var(--brand-black);
+  --color-brand-silver: var(--brand-silver);
+  --color-paper: var(--paper);
+  --color-paper-shade: var(--paper-shade);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-on-dark: var(--on-dark);
+
+  --color-chart-1: var(--brand-red);
+  --color-chart-2: var(--brand-blue);
+  --color-chart-3: var(--brand-orange);
+  --color-chart-4: var(--brand-yellow);
+  --color-chart-5: var(--brand-silver);
+  --color-sidebar: var(--paper);
+  --color-sidebar-foreground: var(--ink);
+  --color-sidebar-primary: var(--brand-red);
+  --color-sidebar-primary-foreground: var(--paper);
+  --color-sidebar-accent: var(--paper-shade);
+  --color-sidebar-accent-foreground: var(--ink);
+  --color-sidebar-border: var(--ink);
+  --color-sidebar-ring: var(--brand-red);
+}
+
+:root {
+  --radius: 0rem;
+
+  --brand-red: oklch(0.592 0.224 26.1);
+  --brand-blue: oklch(0.458 0.143 256.7);
+  --brand-orange: oklch(0.704 0.177 49);
+  --brand-yellow: oklch(0.896 0.186 109.6);
+  --brand-black: oklch(0.14 0 0);
+  --brand-silver: oklch(0.738 0.003 264.5);
+  --paper: oklch(0.946 0.011 89.7);
+  --paper-shade: oklch(0.883 0.017 88);
+  --ink: oklch(0.14 0 0);
+  --ink-soft: oklch(0.218 0 0);
+  --on-dark: oklch(0.975 0.006 89.7);
+
+  --background: var(--brand-black);
+  --foreground: var(--on-dark);
+  --card: var(--paper);
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+  --primary: var(--brand-red);
+  --primary-foreground: var(--on-dark);
+  --secondary: var(--brand-blue);
+  --secondary-foreground: var(--on-dark);
+  --muted: var(--ink-soft);
+  --muted-foreground: oklch(0.72 0.005 89.7);
+  --accent: var(--brand-yellow);
+  --accent-foreground: var(--ink);
+  --destructive: var(--brand-red);
+  --destructive-foreground: var(--on-dark);
+  --border: oklch(1 0 0 / 15%);
+  --input: var(--ink);
+  --ring: var(--brand-yellow);
+
+  --shadow-paper: 0 0.6cqw 1.2cqw oklch(0 0 0 / 45%);
+  --shadow-lift: 0 18px 40px -12px oklch(0 0 0 / 70%);
+  --paper-texture: url("/images/paper-texture.jpg");
+  --grain: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: var(--brand-yellow);
+    color: var(--ink);
+  }
+}
+
+/* ---------- Paper & texture utilities ---------- */
+
+@utility paper-tex {
+  background-image: var(--paper-texture);
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+@utility crumple-tex {
+  background-image: url("/images/crumpled-texture.jpg");
+  background-size: 320px 320px;
+  mix-blend-mode: multiply;
+}
+
+@utility crumple-screen {
+  background-image: url("/images/crumpled-texture.jpg");
+  background-size: 320px 320px;
+  mix-blend-mode: screen;
+}
+
+@utility ink-rough {
+  filter: url(#ink-rough);
+}
+
+@utility grain {
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: var(--grain);
+    mix-blend-mode: multiply;
+    opacity: 0.35;
+  }
+}
+
+@utility grain-light {
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: var(--grain);
+    mix-blend-mode: screen;
+    opacity: 0.18;
+  }
+}
+
+@utility photo-bw {
+  filter: grayscale(1) contrast(1.15) brightness(0.95);
+}
+
+@utility shadow-paper {
+  filter: drop-shadow(0 0.35cqw 0.6cqw oklch(0 0 0 / 0.45));
+}
+
+@utility shadow-paper-lg {
+  filter: drop-shadow(0 10px 18px oklch(0 0 0 / 0.55));
+}
+
+/* Text styles */
+@utility display {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  line-height: 0.88;
+  letter-spacing: -0.005em;
+}
+
+@utility label-mono {
+  font-family: var(--font-label);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+}
+
+@utility label-bold {
+  font-family: var(--font-label);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+@utility ink-print {
+  text-shadow: 0 0 1px currentColor;
+}
+
+/* Fixed grain over the whole site */
+@utility site-grain {
+  position: fixed;
+  inset: -50%;
+  pointer-events: none;
+  z-index: 60;
+  background-image: var(--grain);
+  opacity: 0.09;
+  animation: grain-shift 1.2s steps(6) infinite;
+}
+
+@keyframes grain-shift {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-3%, 2%); }
+  40% { transform: translate(2%, -3%); }
+  60% { transform: translate(-2%, -1%); }
+  80% { transform: translate(3%, 3%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* The hero collage is drawn on a 1920x1080 artboard; units scale with its width. */
+@utility artboard {
+  container-type: inline-size;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .site-grain { animation: none; }
+}
+
+@utility marquee {
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@utility text-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--outline-color, var(--on-dark));
+}
+
+@utility outline-ink {
+  --outline-color: var(--ink);
+}
